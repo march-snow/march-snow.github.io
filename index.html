@@ -30,7 +30,7 @@
     </header>
 
     <section class="hero">
-        <h1>단순함 속에<br>집중된 선택</h1>
+        <h1>단순함 속에<br>집중된 선택.</h1>
         <p>책과 영화, 그리고 예술을 담은 공간</p>
     </section>
 
@@ -96,48 +96,12 @@
         <h2>Archive</h2>
         <p>사색의 조각들</p>
 
-        <!-- Tab Navigation -->
-        <div class="iframe-tabs">
-            <button class="tab-btn active" onclick="changeArchiveTab(this, '')">Milestones</button>
-            <button class="tab-btn" onclick="changeArchiveTab(this, '')">Retrospectives</button>
-            <button class="tab-btn" onclick="changeArchiveTab(this, '')">Insights</button>
+        <div class="card-container"
+            style="background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
+            <iframe
+                src="https://weak-particle-016.notion.site/ebd//2cadb03ea035807dbb2ac92abb8b6e54?v=2cadb03ea035801b9128000c63833a17"
+                width="100%" height="850" frameborder="0" allowfullscreen></iframe>
         </div>
-
-        <div id="archive-content" class="card-container"
-            style="min-height: 400px; display: flex; align-items: center; justify-content: center; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
-            <!-- Iframe will be injected here when link is available -->
-            <div style="text-align: center; padding: 2rem;">
-                <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">Content Coming Soon</h3>
-                <p>이 섹션은 현재 준비 중입니다.<br>곧 채워질 예정이니 기대해주세요!</p>
-            </div>
-        </div>
-
-        <script>
-            function changeArchiveTab(btn, url) {
-                // Update Button Styles
-                var buttons = btn.parentElement.getElementsByClassName('tab-btn');
-                for (var i = 0; i < buttons.length; i++) {
-                    buttons[i].classList.remove('active');
-                }
-                btn.classList.add('active');
-
-                // Update Content
-                var contentDiv = document.getElementById('archive-content');
-
-                if (url) {
-                    // If URL exists, show iframe
-                    contentDiv.innerHTML = '<iframe src="' + url + '" width="100%" height="850px" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>';
-                } else {
-                    // If no URL (placeholder), show message
-                    contentDiv.innerHTML = `
-                        <div style="text-align: center; padding: 2rem;">
-                            <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">Coming Soon</h3>
-                            <p>${btn.innerText} 섹션은 준비 중입니다.</p>
-                        </div>
-                    `;
-                }
-            }
-        </script>
     </section>
 
     <footer>
@@ -145,6 +109,5 @@
                 style="color: inherit; text-decoration: underline;">Contact</a></p>
     </footer>
 </body>
-
 
 </html>
