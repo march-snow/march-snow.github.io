@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log of S</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Log of S</a></h1>
+        <nav>
+            <a href="#lecture">Lecture/</a>
+            <a href="#booklog">Book&Movielog/</a>
+            <a href="#art">Artlogue/</a>
+            <a href="http://puresue.byus.net/repo/">Repository/</a>
+            <a href="#archive">Archive</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>예측이 어려우면,<br>기민하게 대응하자.</h1>
+        <p>단순함 속에 집중된 선택을 담은 공간</p>
+    </section>
+
+    <!-- Lecture Section -->
+    <section id="lecture">
+        <h2>Lecture</h2>
+        <p>지식과 경험을 나누는 시간</p>
+        <div class="card-container"
+            style="background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); overflow: hidden;">
+            <iframe
+                src="https://weak-particle-016.notion.site/ebd//2c9db03ea0358038844ffa7d1069ccec?v=2c9db03ea03580f5aa62000c4c40a15f"
+                width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="booklog">
+        <h2>Book & Movie</h2>
+        <p>책과 영화 이야기</p>
+
+        <!-- Tab Navigation -->
+        <div class="iframe-tabs">
+            <button class="tab-btn active"
+                onclick="changeBookTab(this, 'https://weak-particle-016.notion.site/ebd//28fdb03ea03580e7a3aafd2e466f2a2f?v=28fdb03ea03580feb33f000c29691263')">Reviews</button>
+            <button class="tab-btn"
+                onclick="changeBookTab(this, 'https://weak-particle-016.notion.site/ebd//28fdb03ea03580ccae17e26d16165478?v=2c9db03ea035800ea986000cdd00b28b')">Transcriptions</button>
+            <button class="tab-btn"
+                onclick="changeBookTab(this, 'https://weak-particle-016.notion.site/ebd//29adb03ea035807cbfd6fa0194545c21')">Recommendations</button>
+        </div>
+
+        <div id="content">
+            <iframe id="book-iframe"
+                src="https://weak-particle-016.notion.site/ebd//28fdb03ea03580e7a3aafd2e466f2a2f?v=28fdb03ea03580feb33f000c29691263"
+                width="100%" height="850px" frameborder="0" allowfullscreen></iframe>
+
+        </div>
+
+        <script>
+            function changeBookTab(btn, url) {
+                // Update Iframe Source
+                if (url) {
+                    document.getElementById('book-iframe').src = url;
+                }
+
+                // Update Button Styles
+                var buttons = document.getElementsByClassName('tab-btn');
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove('active');
+                }
+                btn.classList.add('active');
+            }
+        </script>
+    </section>
+
+    <section id="art">
+        <h2>Artlogue</h2>
+        <p>그림과 작가의 이야기</p>
+
+        <div class="art-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/640px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+                alt="별이 빛나는 밤" />
+            <div class="art-info">
+                <h3>빈센트 반 고흐 – 별이 빛나는 밤 (1889)</h3>
+                <p>
+                    고흐는 이 그림을 정신병원에 입원 중일 때 그렸습니다.<br>
+                    소용돌이치는 하늘은 그의 내면 세계를 반영하며, 고요한 마을과 극명한 대비를 이룹니다.<br>
+                    이 작품은 단순한 경관이 아니라 감정의 표출로 볼 수 있습니다.
+                </p>
+                <!-- Bridge to PHP Page -->
+                <a href="http://puresue.byus.net/art/" class="btn-more">Enter Artlogue →</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="archive">
+        <h2>Archive</h2>
+        <p>사색의 조각들</p>
+
+        <!-- Tab Navigation -->
+        <div class="iframe-tabs">
+            <button class="tab-btn active" onclick="changeArchiveTab(this, '')">Milestones</button>
+            <button class="tab-btn" onclick="changeArchiveTab(this, '')">Retrospectives</button>
+            <button class="tab-btn" onclick="changeArchiveTab(this, '')">Insights</button>
+        </div>
+
+        <div id="archive-content" class="card-container"
+            style="min-height: 400px; display: flex; align-items: center; justify-content: center; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
+            <!-- Iframe will be injected here when link is available -->
+            <div style="text-align: center; padding: 2rem;">
+                <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">Content Coming Soon</h3>
+                <p>이 섹션은 현재 준비 중입니다.<br>곧 채워질 예정이니 기대해주세요!</p>
+            </div>
+        </div>
+
+        <script>
+            function changeArchiveTab(btn, url) {
+                // Update Button Styles
+                var buttons = btn.parentElement.getElementsByClassName('tab-btn');
+                for (var i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove('active');
+                }
+                btn.classList.add('active');
+
+                // Update Content
+                var contentDiv = document.getElementById('archive-content');
+
+                if (url) {
+                    // If URL exists, show iframe
+                    contentDiv.innerHTML = '<iframe src="' + url + '" width="100%" height="850px" frameborder="0" allowfullscreen style="border-radius: 12px;"></iframe>';
+                } else {
+                    // If no URL (placeholder), show message
+                    contentDiv.innerHTML = `
+                        <div style="text-align: center; padding: 2rem;">
+                            <h3 style="color: var(--text-secondary); margin-bottom: 1rem;">Coming Soon</h3>
+                            <p>${btn.innerText} 섹션은 준비 중입니다.</p>
+                        </div>
+                    `;
+                }
+            }
+        </script>
+    </section>
+
+    <footer>
+        <p>© 2025 Log of S · Developed by Sue · <a href="mailto:codewriter2000@gmail.com"
+                style="color: inherit; text-decoration: underline;">Contact</a></p>
+    </footer>
+</body>
+
+</html>
